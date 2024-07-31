@@ -280,3 +280,9 @@ plenty of other ones:
 ---
 
 # Slides available on Github
+
+[kissu/js-events](https://github.com/kissu/js-events)
+
+## And hosted on Netlify
+
+[lw-events.netlify.app](https://lw-events.netlify.app/1)
