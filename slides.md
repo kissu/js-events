@@ -272,7 +272,7 @@ plenty of other ones:
 
 <ul v-click="3">
 <li><a href="https://gorescript.github.io/classic/play/">Gorescript</a></li>
-<li><a href="https://developer.mozilla.org/enUS/docs/Web/Events">Event reference on MDN</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Events">Event reference on MDN</a></li>
 <li><a href="https://javascript.info/introduction-browser-events">javascript.info</a></li>
 <li><a href="https://javascript.info/bubbling-and-capturing">[optional] Bubbling</a></li>
 </ul>
