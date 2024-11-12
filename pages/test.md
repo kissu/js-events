@@ -1,5 +1,0 @@
----
-mdc: true
----
-
-<Counter />

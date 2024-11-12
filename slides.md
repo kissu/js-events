@@ -4,285 +4,169 @@ drawings:
   persist: false
 mdc: true
 transition: fade-out
+
+fonts:
+  sans: Robot
+  serif: Robot Slab
+  mono: Fira Code
 ---
 <Anime />
 
 ---
 
-# Let's start simple 🌱
-
-
-````md magic-move
-```html
-<button>click me now!</button>
-```
-
-```html
-<button onclick="alert('Click!')">click me now!</button>
-```
-````
-
-<button v-click class="px-4 py-2 font-bold border-2 bg-slate-100 text-slate-700 border-slate-500 rounded-xl" onclick="alert('Rolling! 🚌')">Oh yeah! 🤘🏻</button>
-
-<div
-  v-click
-  v-motion
-  :initial="{
-    opacity: 1,
-    rotate: -20,
-    scale: 2,
-    x: -80
-  }"
-  :enter="{
-    opacity: 1,
-    rotate: 10,
-    scale: 1,
-    x: 40,
-    y: -50,
-    transition: {
-      duration: 1000,
-    },
-  }"
->
-<fluent-emoji-cross-mark class="absolute text-7xl" />
-</div>
-
-<br />
-
-
-<p v-click class="font-bold text-orange-400">Bad practice because:</p>
+# Let's start by the Web platform 🌐
 
 <v-clicks>
 
-- not scalable: imagine with 345 buttons 🥹
-- bloated HTML 🍔
-- not secure at all 🦊
+- SPA in your browser
+- Web components
+- Node.js server
+- Hybrid Rendering
+- Regular static bundled app
+- Edge
+- hosted on a pi0?!
+- self-host ❤️‍🩹
 
 </v-clicks>
 
 <!--
-- basic HTML? yes...but not cuz
-  - not scalable: 345 buttons with same event
-  - bloated HTML
-  - not secure either
+Vue + Nuxt is quite open as of where you want to host it
+💖
+
+SPA:
+  - easy to plug to anything thanks to the CDN approach, wire to Wordpress
+  - can even be used for HomeAssistant if you're into home automation
+
+Web components
+💖
+- syntax of SFC is close to modern HTML/CSS/JS 👉🏻 easy to transform into web components on a bigger scale (with micro-frontends at a big bank for example)
+
+- NODE: perfect if you want some SSR content changing often
+- HYBRID RENDERING: perfect if you want to fine-grain the behavior of all the possible variants 💖
+- STATIC: Surge, Netlify, Vercel, Cloudflare pages
+- EDGE 💖 closer to the user, interesting details closer to location of the user (decreased latency, shorter cold start boot times, a/b testing, geolocation)
+- HOSTED on a pi0 💖
+- SELF-HOST: no vendor lock-in, no limitations either, host where you want it! 🕊️💖
 -->
-
----
-transition: slide-up
 ---
 
-# How about something cleaner? 🧑‍💻
+# Web-ish platform
 
-<main class="flex justify-around">
+<v-clicks depth="2">
 
-<div class="left-side">
-
-````md magic-move
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <link rel="stylesheet" href="./style.css">
-</head>
-
-<body>
-  <button>hello</button>
-</body>
-</html>
-```
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <link rel="stylesheet" href="./style.css">
-</head>
-
-<body>
-  <button class="select-me">hello</button>
-</body>
-</html>
-```
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <link rel="stylesheet" href="./style.css">
-</head>
-
-<body>
-  <button class="select-me">hello</button>
-
-  <script src="./script.js"></script>
-</body>
-</html>
-```
-````
-
-</div>
-
-<div class="right-side" v-click="3">
-
-````md magic-move
-```js
-console.log('works well')
-```
-
-```js
-// double-check that the file is properly loaded
-console.log('works well')
-```
-
-```js
-// double-check that the file is properly loaded
-console.log('works well')
-// select the element and store it into a variable
-const button = document.querySelector('.select-me')
-```
-
-```js
-// double-check that the file is properly loaded
-console.log('works well')
-// select the element and store it into a variable
-const button = document.querySelector('.select-me')
-// add the listener to it
-button.addEventListener('click', () => {
-  console.log('Rocket shipped!! 🚀')
-})
-```
-
-```js {5-8|9-10|*}
-// double-check that the file is properly loaded
-console.log('works well')
-// select the element and store it into a variable
-const button = document.querySelector('.select-me')
-// move it to a function
-function shipRocket() {
-  console.log('Rocket shipped!! 🚀')
-}
-// add the listener to it 🕵🏻‍♂️
-button.addEventListener('click', shipRocket)
-```
-
-```js
-// double-check that the file is properly loaded
-console.log('works well')
-// select the element and store it into a variable
-const button = document.querySelector('.select-me')
-// move it to a function
-function shipRocket() {
-  console.log('Rocket shipped!! 🚀')
-}
-// add the listener to it 🕵🏻‍♂️
-button.addEventListener('click', shipRocket)
-// done working with it? clean up the memory usage 🧹
-button.removeEventListener('click', shipRocket)
-```
-````
-
-</div>
-
-<v-clicks>
+- PWAs to save the day! 🎊
+- lowest effort for maximum output:
+  - offline mode available
+  - splitting context
+  - perfect for webapps
+  - [etc...]
 
 </v-clicks>
 
 <!--
-showcase:
-- usage of $0
-- getEventListeners($0)
-- devtools: Elements -> Event listeners
-- `event` object
-- DOMContentLoaded
-- event + keypress + event.key + keycode.info
-  - make a function with it + `console.log`
-- showcase `this` in a function
+plenty of Web platform and it's quite cool indeed but...
+not the best support on all devices but mostly works out of the box
+
+💖
+
+[Show YouTube Music + Squoosh + Volta]
 -->
-
-</main>
-
-<p v-click class="pt-12 text-2xl text-center">Let's see this in action + the <code>event</code> object. 👨🏻‍💻</p>
-
 ---
 
-```js
-element.addEventListener(event, handler, [options]);
-```
+# Desktop apps
 
-<Arrow v-click x1="200" y1="150" x2="250" y2="80" color="orange" />
-<Arrow v-click="2" x1="325" y1="300" x2="320" y2="80" color="turquoise" />
-<Arrow v-click="3" x1="600" y1="250" x2="400" y2="80" color="fuchsia" />
+<v-clicks depth="2">
 
-<p class="absolute pt-16 text-2xl triggers" v-click="1">This is the trigger
-<br /><span class="text-base text-lime-400 element">- click</span>
-<br /><span class="text-base text-lime-400 element">- keypress</span>
-<br /><span class="text-base text-lime-400 element">- mouseover</span>
-<br /><span class="text-base text-lime-400 element">- submit</span>
-<br /><span class="text-base text-lime-400 element">- focus</span>
-<br /><span class="text-base text-lime-400 element">- blur</span>
-<br /><span class="text-base text-lime-400 element">- transitionend</span>
-</p>
+- Web is cool and all but...we need more
+- Tauri saves the day! 🥇
+  - lots of security baked-in
+  - frontend independent
+  - minimal size for the bundle size
+  - memory consumption is not growing like crazy
 
-<p class="absolute text-2xl pt-[14rem] pl-[14rem]" v-click="2">Your callback function
-<br /><span class="text-base"><code>ie. shipRocket</code></span>
-</p>
-
-<p class="absolute text-2xl pt-[11rem] pl-[34rem]" v-click="3">[Optional] options object
-<br /><span class="text-base text-pink-300">- capture</span>
-<br /><span class="text-base text-pink-300">- once</span>
-<br /><span class="text-base text-pink-300">- passive</span>
-<br /><span class="text-base text-pink-300">- signal</span>
-</p>
-
-
----
-
-# Few other examples of triggers (Gamepad API)
-
-<GamepadDemo />
-
----
-
-## Intersection Observer API
-
-<Intersection />
-
----
-dragPos:
-  square: [ 800, 100, 200, 50 ]
----
-
-# Draggable elements
-
-<img class="!w-96" v-drag="[448,64,400,400,37]" src="https://www.lewagon.com/assets/v4/logo-lewagon-9c19fb39a748cd3b1f49059ce0dc6c0dfc4cc2447d5a9a3e01bd2d5a214faf3c.svg">
-
----
-transition: slide-up
----
+</v-clicks>
 
 <!--
-plenty of other ones:
-- dropzone
-- resize
+not enough? let's build a desktop app
+
+ships less potential DRUGS lol bugs to the end user (checks the version of the browser all the time)
+
+can use any kind of JS framework
+
+because no need for Chromium, it's using the native web renderer
+
+because we are all sick of using Electron with Slack, Discord, Teams
+
+[💖 then show project ❤️‍🩹]
 -->
+---
+layout: center
+---
 
-## There are <span v-mark.circle.red="1">plenty</span> more!
+<h1 class="text-3xl">Btw, those slides are also using Vue.js 💚</h1>
 
-<p v-click="2">Few interesting links:</p>
-
-<ul v-click="3">
-<li><a href="https://gorescript.github.io/classic/play/">Gorescript</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/Events">Event reference on MDN</a></li>
-<li><a href="https://javascript.info/introduction-browser-events">javascript.info</a></li>
-<li><a href="https://javascript.info/bubbling-and-capturing">[optional] Bubbling</a></li>
-</ul>
+<!-- Hello there 😉 -->
 
 ---
 
-# Slides available on Github
+# Web Extension
 
-[kissu/js-events](https://github.com/kissu/js-events)
+<v-clicks depth="2">
 
-## And hosted on Netlify
+- browser realm with still some interactivity?
+- Google Manifest v3
+- any benefits to Vue here?
 
-[lw-events.netlify.app](https://lw-events.netlify.app/1)
+</v-clicks>
+
+<!--
+lots of boilerplate, let's skip it
+
+yes, because you can use the entire ecosystem with:
+  - all VueUse composables
+  - fine-grain reactivity
+  - all the ecosystem/plugins
+
+[show extension ❤️‍🩹]
+-->
+
+---
+
+# Mobile app
+
+<v-clicks depth="2">
+
+- Ionic/Capacitor is the way to go nowadays
+- why even use Nuxt here either? 🤔
+- now, time for a hot take! 🔥 🌶️ 🧄 🫚 🔥
+
+</v-clicks>
+
+<!--
+nice tool to bundle it all: Capacitor 💖
+- nice cuz can be sent to any wearable
+- TV OS is also a possible target
+- or even embedded devices like car dashboards
+
+plugins made by the Vue community 💖
+
+the entire work from the Vue/Vite/Nuxt team is meant to be open and enable people to ship projects thanks to open source work
+
+not owned by any company that could put any pressure on some decision-making regarding the direction of those frameworks
+
+[showcase the app ❤️‍🩹]
+
+🔥🔥🔥
+
+have a big business and want to be serious? stop stacking JavaScript
+use better/more specific tools like Flutter 💖
+
+
+hire some iOS/Android/etc devs because at the end of the day, you still need to know the platform
+-->
+
+---
+layout: center
+---
+
+<p class="text-4xl">🍉 Thanks 🙏🏻</p>
